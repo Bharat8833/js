@@ -1,36 +1,104 @@
-let a = 290, b = 220, c = 280, d = 270;
+let a = 290, b = 220, c = 280, d = 270, f = 320;
+// if (a > b) {
+//     if (a > c) {
+//         if (a > d) {
+//             document.write("\n a is max" + a);
+//         } else {
+//             document.write("\n d is max" + d);
+//         }
+//     } else {
+//         if (c > d) {
+//             document.write("\n c is max" + c);
+//         } else {
+//             document.write("\n d is max" + d);
+//         }
+//     }
+// } else {
+//     if (b > c) {
+//         if (b > d) {
+//             document.write("\n b is max" + b);
+//         } else {
+//             document.write("\n d is max" + d);
+//         }
+//     } else {
+//         if (c > d) {
+//             document.write("\n c is max" + c);
+//         } else {
+//             document.write("\n d is max" + d);
+//         }
+//     }
+// }
+
+
 if (a > b) {
     if (a > c) {
         if (a > d) {
-            document.write("\n a is max" + a);
+            if (a > f) {
+                document.write("\n a is max" + a);
+            } else {
+                document.write("\n f is max" + f);
+            }
+
         } else {
-            document.write("\n d is max" + d);
+            if (d > f) {
+                document.write("\n d is max" + d);
+            } else {
+                document.write("\n f is max" + f);
+            }
+
         }
     } else {
         if (c > d) {
-            document.write("\n c is max" + c);
+            if (c > f) {
+                document.write("\n c is max" + c);
+            } else {
+                document.write("\n f is max" + f);
+            }
+
         } else {
-            document.write("\n d is max" + d);
+            if (d > f) {
+                document.write("\n d is max" + d);
+            } else {
+                document.write("\n f is max" + f);
+            }
         }
     }
 } else {
     if (b > c) {
         if (b > d) {
-            document.write("\n b is max" + b);
+            if (b > f) {
+                document.write("\n b is max" + b);
+            } else {
+                document.write("\n f is max" + f);
+            }
+
         } else {
-            document.write("\n d is max" + d);
+            if (d > f) {
+                document.write("\n d is max" + d);
+            } else {
+                document.write("\n f is max" + f);
+            }
         }
     } else {
         if (c > d) {
-            document.write("\n c is max" + c);
+            if (c > f) {
+                document.write("\n c is max" + c);
+            } else {
+                document.write("\n f is max" + f);
+            }
+
         } else {
-            document.write("\n d is max" + d);
+            if (d > f) {
+                document.write("\n d is max" + d);
+            } else {
+                document.write("\n f is max" + f);
+            }
         }
     }
 }
 
 
-// take 1,2,3,4 for +,-,*,/ 
+// take 1,2,3,4 for +,-,*,/
 // document.write("<pre>1.add<br>2.sub<br>3.multi<br>4.div")
 // let int = prompt("enter your choice");
 // let int1 = parseInt(int);

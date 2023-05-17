@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logical oprator</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        let a=20,b=30,c=23,d=45;
+        // logical AND opratoe
+        if(a>b && a>c && a>d){
+            document.write("a is max");
+        }else if(b>c && b>d){
+            document.write("b is max");
+        }else if(c>d){
+            document.write("c is max");
+        }else{
+            document.write("d is max");
+        }
+
+        // logical OR oprator
+         if(a%5==0 || a%11==0){
+            document.write("<br>true");
+         }else{
+            document.write("<br>false");
+         }
+
+         // logical NOT op.
+
+         if(a!=d){
+            document.write("<br>true");
+         }else{
+            document.write("<br>false");
+         }
+    </script>
+</body>
+</html>

@@ -32,10 +32,10 @@ function mult(a,b){
 
 //tack somthing return something
 
-function mult2(a,b){
+function area(r){
   
-    c=parseInt(a)*parseInt(b);
-    return c;
+    const pi=3.14;
+    return pi*r**2;
 }
 
-document.write('substraction is :'+mult2(2,3));
+document.write('area of circle is :'+area(5));

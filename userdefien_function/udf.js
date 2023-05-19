@@ -37,5 +37,5 @@ function area(r){
     const pi=3.14;
     return pi*r**2;
 }
-
-document.write('area of circle is :'+area(5));
+   radius=prompt("enter radius ");
+document.write('area of circle is :'+area(radius));

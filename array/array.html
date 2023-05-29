@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array mathods</title>
+</head>
+<body>
+    <script>
+        let a=["hi","hello","how"]; //array
+      
+
+        let b=["bye","tata","go"]; 
+        // let b=a.toString(); //convert array to strong
+        // document.write('<br>'+b);
+        // let c=b.split(",");  //convert string to array
+        // document.write('<br>'+c[2]); //or 
+        // for(let i=0;i<c.length;i++){
+        // document.write('<br>'+c[i]); //print array
+        // }
+           document.write('<br>----------------------------------');
+           
+        // push function
+        a.push("bye");
+        for(let i=0;i<a.length;i++){
+        document.write('<br>'+a[i]);
+        }
+
+        document.write('<br>----------------------------------');
+        a.pop("bye");
+        for(let i=0;i<a.length;i++){
+        document.write('<br>'+a[i]);
+        }
+        document.write('<br>----------------------------------');
+        a.shift();
+        for(let i=0;i<a.length;i++){
+        document.write('<br>'+a[i]);
+        }
+        document.write('<br>----------------------------------');
+        a.unshift("bye");
+        for(let i=0;i<a.length;i++){
+        document.write('<br>'+a[i]);
+        }
+        document.write('<br>----------------------------------');
+        a.splice(3,1,"bharat");
+        for(let i=0;i<a.length;i++){
+        document.write('<br>'+a[i]);
+        }
+        document.write('<br>----------------------------------');
+       
+        let c=["banana","keri","apple"];
+        
+        document.write('<br>'+c.join('*'));
+        document.write('<br>'+c.indexOf("keri"));
+        document.write('<br>'+c.slice(0,2));
+
+        let d=a.concat(b,c);
+        document.write(''+d);
+        
+    </script>
+</body>
+</html>

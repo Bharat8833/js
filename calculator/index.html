@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        div>input::-webkit-inner-spin-button {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="flex justify-center items-center" style="height: 100vh">
+    <div class="bg-black p-4 rounded-xl flex flex-col w-1/5 gap-2">
+        <input type="text"  class="px-3 py-2 outline-none rounded-xl text-5xl" name="screen" id="screen" value="" />
+        <div class=" gap-2 flex">
+            <button class="bg-red-200 text-6xl px-2 w-1/2 py-1 rounded-xl font-bold" name="clear" id="clear" value="">
+                C
+            </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/2 py-1 rounded-xl" name="back" id="back" value="">
+                <i class="fa-solid fa-left-long"></i>
+            </button>
+        </div>
+        <div class=" gap-2 flex">
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="seven" value=""> 7 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="eight"  value=""> 8 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="nine"  value=""> 9 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="multi" value=""> X </button>
+        </div>
+        <div class=" gap-2 flex">
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="four"  value=""> 4 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="five"  value=""> 5 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="six"  value=""> 6 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 pb-2 rounded-xl font-bold" name="plus"  value=""> + </button>
+        </div>
+        <div class=" gap-2 flex ">
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="one"  value=""> 1 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="two"  value=""> 2 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="three"  value=""> 3 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="minus"  value=""> - </button>
+        </div>
+        <div class=" gap-2 flex ">
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="zero"  value=""> 0 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1  rounded-xl font-bold" name="dot"  value=""> . </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="divide"  value=""> / </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 pb-3 rounded-xl font-bold" name="equal"  value=""> = </button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

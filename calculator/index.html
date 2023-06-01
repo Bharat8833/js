@@ -21,7 +21,7 @@
 
 <body class="flex justify-center items-center" style="height: 100vh">
     <div class="bg-black p-4 rounded-xl flex flex-col w-1/5 gap-2">
-        <input type="text"  class="px-3 py-2 outline-none rounded-xl text-5xl" name="screen" id="screen" value="" />
+        <input type="text" readonly  class="px-3 py-2 outline-none rounded-xl text-5xl" name="screen" id="screen" value="" />
         <div class=" gap-2 flex">
             <button class="bg-red-200 text-6xl px-2 w-1/2 py-1 rounded-xl font-bold" name="clear" id="clear" value="">
                 C
@@ -31,28 +31,28 @@
             </button>
         </div>
         <div class=" gap-2 flex">
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="seven" value=""> 7 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="eight"  value=""> 8 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="nine"  value=""> 9 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="multi" value=""> X </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="seven" onclick="appendkey(7)" value=""> 7 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="eight" onclick="appendkey(8)" value=""> 8 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="nine" onclick="appendkey(9)" value=""> 9 </button>
+            <button class="bg-red-200 text-4xl px-2 w-1/4 py-1 rounded-xl font-bold" name="multi" onclick="appendkey('x')" value=""> X </button>
         </div>
         <div class=" gap-2 flex">
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="four"  value=""> 4 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="five"  value=""> 5 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="six"  value=""> 6 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 pb-2 rounded-xl font-bold" name="plus"  value=""> + </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="four" onclick="appendkey(4)" value=""> 4 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="five" onclick="appendkey(5)" value=""> 5 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="six" onclick="appendkey(6)" value=""> 6 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 pb-2 rounded-xl font-bold" name="plus" onclick="appendkey('+')" value=""> + </button>
         </div>
         <div class=" gap-2 flex ">
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="one"  value=""> 1 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="two"  value=""> 2 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="three"  value=""> 3 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="minus"  value=""> - </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="one" onclick="appendkey(1)" value=""> 1 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="two" onclick="appendkey(2)"  value=""> 2 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="three" onclick="appendkey(3)" value=""> 3 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="minus" onclick="appendkey('-')" value=""> - </button>
         </div>
         <div class=" gap-2 flex ">
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="zero"  value=""> 0 </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1  rounded-xl font-bold" name="dot"  value=""> . </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="divide"  value=""> / </button>
-            <button class="bg-red-200 text-6xl px-2 w-1/4 pb-3 rounded-xl font-bold" name="equal"  value=""> = </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="zero" onclick="appendkey(0)" value=""> 0 </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1  rounded-xl font-bold" name="dot" onclick="appendkey('.')" value=""> . </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 py-1 rounded-xl font-bold" name="divide" onclick="appendkey('/')" value=""> / </button>
+            <button class="bg-red-200 text-6xl px-2 w-1/4 pb-3 rounded-xl font-bold" name="equal" onclick="equal()" value=""> = </button>
         </div>
     </div>
 

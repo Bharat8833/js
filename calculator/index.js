@@ -11,3 +11,15 @@ function equal(){
     var c=eval(b);
     document.getElementById('screen').value =c;
 }
+
+function clearall(){
+    text='';
+    document.getElementById('screen').value =text;
+}
+
+function backspace(){
+   var d=  document.getElementById('screen').value ;
+   var f= d.slice(0,-1);
+   text=f;
+   document.getElementById('screen').value =text;
+}

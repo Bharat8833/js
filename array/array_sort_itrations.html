@@ -1,18 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array sort and itration</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="demo"></div>
-    <sript>
-        let a = [233,23,45,34,200,300,420,35];
-         
-        a.sort();
-        a.foreach
-    </sript>
-</body>
+    <script>
+      let a = ["pqr", "xyz", "abc", "test"];
+      // alpha sorting
+      a.sort(); //ascending order
+      for (let i = 0; i < a.length; i++) {
+        document.write("arrat" + a[i] + "<br>");
+      }
+      document.write("--------------------------<br>");
+      a.reverse(); // descending order
+      a.forEach(function (v, i) {
+        document.write("array is" + v + "<br>");
+      });
+      document.write("--------------------------<br>");
+      // numeric sorting
+      let b = [152, 100, 122, 134, 333, 231];
+
+      let c = b.sort(function (a, b) {
+        return a - b; // ascending order
+      });
+
+      c.forEach(function (v, i) {
+        document.write("array is" + v + "<br>");
+      });
+
+      document.write("--------------------------<br>");
+      let d = b.sort(function (a, b) {
+        return a - b; // descending order
+      });
+      d.forEach(function (v, i) {
+        document.write("array is" + v + "<br>");
+      });
+
+      document.write("--------------------------<br>");
+
+      let e = b.map(function (i) {
+         if(i%2==0){ //even
+            document.write('<br>'+i);
+            
+         }
+      });
+      document.write("<br>--------------------------<br>");
+      let f = b.map(function (i) {
+         if(i%2==1){ //odd
+            document.write('<br>'+i);
+            
+         }
+      });
+      document.write("<br>--------------------------<br>");
+      let g = b.map(function (i) {
+           return i*2;
+      });
+      g.forEach(function (v, i) {
+        document.write("array is" + v + "<br>");
+      });
+      document.write("<br>--------------------------<br>");
+      let h = b.filter(function (i) {
+           return i%2==0;
+      });
+      h.forEach(function (v, i) {
+        document.write("array is" + v + "<br>");
+      });
+      document.write("<br>--------------------------<br>");
+      let i = b.reduce(function (t,v) { // it can't return array
+           return t+v; 
+      });
+       document.write('total is'+i);
+       document.write("<br>--------------------------<br>");
+      let j = b.reduceRight(function (t,v) { // it can't return array and start right side
+           return t+v; 
+      });
+       document.write('total is'+j);
+       
+       document.write("<br>--------------------------<br>");
+      let k=[12,234,65,34,100,123];
+        if(k.includes(100)){
+          document.write('yes')
+        }else{
+            document.write('no')
+        }
+          
+      
+       
+       
+       
+       
+    </script>
+  </body>
 </html>

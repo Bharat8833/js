@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        let a={  //declaration of object
+             fname: "bharat",
+             lname: "dhola",
+             salary: "25000"
+        }
+        // type of print object
+        document.write(''+a.fname+"<br>");
+
+        
+        for(let x in a){
+            document.write(x+' is '+a[x]+"<br>");
+            
+        }
+       document.write('--------------------------<br>');
+       
+        // add object
+        a.address="ahmedabad";
+        for(let x in a){
+            document.write(x+' is '+a[x]+"<br>");
+            
+        }
+        document.write('--------------------------<br>');
+        //delet element in object
+        delete a.address;
+        for(let x in a){
+            document.write(x+' is '+a[x]+"<br>");
+            
+        }
+
+        // object methiods
+
+       document.write('--------------------------<br>');
+       let b={  //this method
+             fname: "bharat",
+             lname: "dhola",
+             salary: "25000",
+             fullname:function(){
+                return this.fname+" "+this.lname
+             }
+        }
+
+        document.write(''+b.fullname()+"<br>");
+        document.write('--------------------------<br>');
+
+        b.address=function(){ //function method
+             return b.fname+" "+b.lname
+        };
+        for(let x in a){
+            document.write(x+' is '+a[x]+"<br>");
+            
+        }
+        document.write('--------------------------<br>');
+    </script>
+</body>
+</html>

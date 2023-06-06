@@ -61,6 +61,30 @@
             
         }
         document.write('--------------------------<br>');
+     
+         let d ={
+            
+            fname: "bharat",
+             lname: "dhola",
+             salary: "25000",
+             // object accesors geter and seter
+             get getslary(){ 
+                return this.salary;
+             },
+             set setlname(newname){
+                 this.lname=newname;
+             }
+
+         }
+
+         document.write('<br> slary is '+d.getslary);
+         document.write('--------------------------<br>');
+         d.setlname="ahir"; 
+         document.write('<br> is '+d.lname);
+           
+
+
+         
     </script>
 </body>
 </html>

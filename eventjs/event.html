@@ -6,22 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
 </head>
-<body>
-    <input type="text" name="name" id="name" class="demo">
+<body onload="bbg2()" id="body" >
+    <input type="text" name="name" id="name">
          
 </input>
-    <button name="click" onclick="add()">click</button>
-    <button name="dblclick" ondblclick="remove()">dobleclick</button>
-    <button name="rclick" mouseu >right click</button>
-    <button>mouseover</button>
-    <button>mouseout</button>
-    <button>keypress</button>
-    <button>keyup</button>
-    <button>keydown</button>
-    <button>load</button>
-    <button>unload</button>
+    <button name="click" id="btn1" onclick="add()">click</button>
+    <button name="dblclick" id="btn2" ondblclick="remove()">dobleclick</button>
+    <button name="rclick" id="btn3" oncontextmenu="text()" >right click</button>
+    <button name="mo" id="btn4" onmouseover="bgc()">mouseover</button>
+    <button name="mu" id="btn5" onmouseout="color()">mouseout</button>
    <script>
+      function add(){
+        document.getElementById('name').value ='bharat';
+        document.getElementById('name').style.color='red';        
+        document.getElementById('name').style.backgroundColor='black';        
+        document.getElementById('btn1').style.backgroundColor='orange';        
+        document.getElementById('btn2').style.backgroundColor='pink';        
+        document.getElementById('btn3').style.backgroundColor='yellow';        
+        document.getElementById('btn4').style.backgroundColor='lightblue';        
+        document.getElementById('btn5').style.backgroundColor='grey';        
+      }
 
+      function remove(){
+        document.getElementById('name').value=' ';        
+      }
+      function text(){
+        document.getElementById('name').value=' bharat dhola ';        
+      }
+      function bgc(){
+        document.getElementById('name').style.backgroundColor='green';        
+        document.getElementById('name').style.padding='10px';        
+            
+      }
+      function color(){  
+        document.getElementById('name').style.padding='0';        
+     }
+    function bbg2(){  
+       alert('wel come...................');
+       document.getElementById('body').style.backgroundColor='orange'       
+     }
    </script>
 </body>
 </html>

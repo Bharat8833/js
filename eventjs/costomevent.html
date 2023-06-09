@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>costum event</title>
+</head>
+<body>
+    <button name="btn" type="button" id="btn" onclick="document.dispatchEvent(e1)">click</button>
+    <input type="text" name="" id="demo">
+   <script>
+     //create event
+    //    const e1 = new Event('msd');
+    // document.addEventListener('msd',function(){
+    //     console.log("biheiocjwednkiceu........");
+    //      let a=12,b=13;
+    //      c=a+b;
+    //      document.getElementById('demo').value= "adition is"+c;
+    //     console.log("adition is "+c);
+    // });
+
+    // costome event controctor
+         //first method without key
+    // let e1 = new CustomEvent('msd2',{
+    //     detail:"hello"
+    // });
+    //  document.addEventListener('msd2',function(data){
+    //    document.getElementById('demo').value= data.detail;
+    //       console.log(""+data.detail)
+    // });
+
+      //second method with key and value
+      let e1 = new CustomEvent('msd2',{
+        detail:{
+            name:"bharat",
+            age:24
+        }
+    });
+     document.addEventListener('msd2',function(data){
+    //    document.getElementById('demo').value= data.detail;
+    //       console.log(""+data.detail)
+ 
+    for(let i in data.detail){
+        document.getElementById('demo').value += data.detail[i];
+    }
+       console.log("age is "+data.detail.age);
+    });
+
+   </script> 
+</body>
+</html>

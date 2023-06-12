@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opps</title>
+    <style>
+      input {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      document.write(
+        "<br>------------------------------------------------<br>"
+      );
+
+        // normal class object
+             class emp{
+                 a=10;
+                 b=20;
+             }
+
+             let a= new emp();
+             document.write(''+a.a+"<br>");
+
+      // // function in class
+
+      class emp2{
+                 a=10;
+                 b=20;
+              ob(){
+                  document.write('add'+(this.a+this.b));
+
+              }
+             }
+
+             let b= new emp2();
+             b.ob();
+
+      document.write("<br>------------------------------------------------<br>");
+
+      // cuntructor an prototype
+      class Student {
+        constructor(name, course, grid) {
+          this.na = name;
+          this.cr = course;
+          this.gr = grid;
+        }
+      }
+      Student.prototype.info = function () {
+        document.write("Name is:" + this.na + "<br>");
+        document.write("Course is:" + this.cr + "<br>");
+        document.write("Gr id  is:" + this.gr + "<br>");
+      };
+
+      let n = prompt("enter name");
+      let c = prompt("enter course");
+      let g = prompt("enter grid");
+      let data = new Student(n, c, g);
+      data.info();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+    <script>
+
+        // error = system genrated
+        // exeption = user genrated
+         let a=12;
+          try {
+             
+             if(a<18){  
+               throw'you not aligible for vot';
+             }else{
+               document.write('aligible for vot');
+              
+             }
+          } catch(e){
+            document.write('error massage......'+e);    
+            
+          }
+          finally{
+            document.write('<br>ok...');
+            
+          }
+    </script>
+</body>
+</html>

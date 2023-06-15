@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scops</title>
+</head>
+<body>
+    <script>
+        // types of scop in js
+        // 1. function / local
+        // 2.Block
+        // 3.Global
+
+        let a=10,b=12; //global
+        function get(){
+             let b=10  //local
+             function put(){
+                let a=12 ;  //block
+             }
+        }
+    </script>
+</body>
+</html>

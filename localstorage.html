@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+</head>
+<body>
+   <div id="demo"></div>
+   <script>
+       let name ="bharat";
+       localStorage.setItem("username",name);
+       localStorage.setItem("surname","ahir"); //stor data to ls
+       let a =localStorage.getItem("username");
+       document.getElementById("demo").innerHTML="name is "+a;
+      //localStorage.removeItem("surname"); //delet data from ls
+       localStorage.setItem("surname","Dhola"); //replace value of data to ls
+
+        // store array in ls
+       let arr =["bharat",22,"BCA"];
+       localStorage.setItem("user",JSON.stringify(arr)); 
+       d = localStorage.getItem("user")
+       t=JSON.parse(d);
+       document.getElementById('demo').innerHTML= "name "+t[0]+"<br>age "+t[1];
+
+       // store object in ls
+
+       let obj={
+            name:"bharat",
+            age:22,
+            course:"BCA"
+       }
+       localStorage.setItem("user1",JSON.stringify(obj));
+       d1 = localStorage.getItem("user1")
+       t1=JSON.parse(d1);
+       document.getElementById('demo').innerHTML+= "<br>name: "+t1.name+"<br>age: "+t1.age;
+
+
+   </script>    
+</body>
+</html>

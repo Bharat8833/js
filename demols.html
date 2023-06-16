@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form">
+    <label>Name:</label>
+    <input id="name" name="name" value="" ><br><br>
+    <label>Age:</label>
+    <input id="age" name="age" value="" ><br><br>
+    <label>Course:</label>
+    <input id="course" name="course" value="" ><br><br>
+   
+    <input type="button" name="btn" id="btn" onclick="data()" value="save">
+    </form>
+    <table border="1" id="data">
+
+    </table>
+    <script>
+        
+        
+            function data(){
+                let u=localStorage.getItem('user');
+                
+                let n = document.form.name.value;
+                let age = document.form.age.value;
+                let co = document.form.course.value;
+
+                let obj ={
+                    name:n,
+                    age:age,
+                    course:co
+                };
+                let a = {};
+                
+                let  u2= JSON.parse(u);
+                if(u!=null){
+                    let b=u2.userData.push(obj);
+                   localStorage.setItem('user',JSON.stringify(u2));
+                } else {
+                    a.userData=[obj];
+                    localStorage.setItem('user',JSON.stringify(a));
+                }
+                
+                
+               for(let i=0;i<u2.userData.length;i++){
+                document.getElementById('data').innerHTML += "<tr>";
+                document.getElementById('data').innerHTML += "<td>"+u2.userData[i].name+"</td>";
+                document.getElementById('data').innerHTML += "<td>"+u2.userData[i].age+"</td>";
+                document.getElementById('data').innerHTML += "<td>"+u2.userData[i].course+"</td>";
+                document.getElementById('data').innerHTML += "</tr>";
+
+                }
+
+                
+               
+             
+
+            }
+    </script>
+</body>
+</html>

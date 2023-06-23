@@ -6,7 +6,14 @@ document.getElementById("btn").addEventListener("click", function () {
     let age = document.frm.age.value;
     let sal = document.frm.salary.value;
     let gen = document.frm.gen.value;
-    let hoby = document.frm.hobys.value;
+    let hoby = document.getElementsByName('hobys');
+    let hoby2 = [];
+    for(let j=0;j<hoby.length;j++){
+        if(hoby[j].checked==true){
+            hoby2.push(hoby[j].value)
+        }
+    }
+
     let up = document.frm.update.value;
     let userDetail = {};
     let data = {
@@ -14,7 +21,7 @@ document.getElementById("btn").addEventListener("click", function () {
         age: age,
         salary: sal,
         gender: gen,
-        hobys:hoby
+        hobys:hoby2
     };
 
    
@@ -29,7 +36,8 @@ document.getElementById("btn").addEventListener("click", function () {
                     info.studentInfo[i].age = age;
                     info.studentInfo[i].salary = sal;
                     info.studentInfo[i].gender = gen;
-                    info.studentInfo[i].hobys = hoby;
+                    info.studentInfo[i].hobys = hoby2;
+                   
                 }
             }
             localStorage.setItem("UserInfo", JSON.stringify(info));
@@ -75,7 +83,7 @@ function display() {
                 dt += "<td>" + data.studentInfo[i].age + "</td>";
                 dt += "<td>" + data.studentInfo[i].salary + "</td>";
                 dt += "<td>" + data.studentInfo[i].gender + "</td>";
-                dt += "<td>" + data.studentInfo[i].hoby + "</td>";
+                dt += "<td>" + data.studentInfo[i].hobys + "</td>";
                 dt += "<td> <input type='button' name='edit' id='edit' onclick='editdata(" + i + ")' value='Edit'></td>";
                 dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + i + ")' value='Delete'></td>";
                 dt += "</tr>";
@@ -107,7 +115,17 @@ function editdata(id) {
                 document.frm.age.value = data.studentInfo[i].age;
                 document.frm.salary.value = data.studentInfo[i].salary;
                 document.frm.gen.value = data.studentInfo[i].gender;
-                document.frm.hobys.value = data.studentInfo[i].hoby;
+                
+                let h =data.studentInfo[i].hobys;
+                let h2 = document.getElementsByName('hobys');
+
+                for(let j=0;j<h2.length;j++){
+                    if(h.includes(h2[j].value)){
+                        h2[j].checked = true;
+                    }
+                }
+
+
                 document.frm.update.value = i;
             }
         }

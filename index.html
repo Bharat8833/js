@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid bg">
+        <div class="container">
+            <div class="row py-4 d-xl-flex align-items-center justify-content-center">
+                <div class="col d-flex align-content-center to">
+                    <i class="fa-solid fa-bars fs-4 text-light d-lg-none d-block" style="cursor: pointer"></i>
+                    <img src="images/logo-mate1.webp" class="ms-4" width="150px" height="20px" />
+                </div>
+                <div class="col d-none d-lg-flex">
+                    <i class="fa-solid fa-phone fs-5 p-2 rounded-circle bg-success-subtle text-success"></i>
+                    <span class="text-light fw-bold fs-4 ms-3">CALL US :<span
+                            class="text-warning">0123-456-7890</span></span>
+                </div>
+
+                <div class="col d-flex justify-content-between position-relative">
+                    <i class="fa-solid fa-user fs-5 p-3 rounded-circle bg-success-subtle text-success" id="user"></i>
+                    <div class="drop">
+                        <p onclick="(window.location.href='index2.html')">Sign In</p>
+                        <p onclick="(window.location.href='index3.html')">LogIn</p>
+                    </div>
+                    <i class="fa-solid fa-heart fs-5 p-3 rounded-circle bg-success-subtle text-success" id="fav"></i>
+                    <i class="fa-solid fa-cart-shopping fs-5 p-3 rounded-circle bg-success-subtle text-success"
+                        id="addtocart"></i>
+                    <span
+                        class="bg-success text-light px-2 py-1 rounded-circle position-absolute end-0 bottom-50">0</span>
+                    <span
+                        class="bg-success text-light px-2 py-1 rounded-circle position-absolute start-50 bottom-50">0</span>
+                </div>
+            </div>
+
+            <div class="row justify-content-around bg-dark align-items-center py-3 rounded-5 head" id="cat">
+               
+               
+                <div class="search col-3 flex align-items-center">
+                    <input class="px-2 py-2 rounded-5" type="search" placeholder="search" />
+                    <i class="fa-solid fa-magnifying-glass text-light fs-4"></i>
+                </div>
+            </div>
+
+            <div class="row align-items-center flex-column flex-lg-row py-5">
+                <div class="col">
+                    <h3 class="text-light fw-bold f">NEW ARRIVAL</h3>
+                    <h1 class="text-light fw-bold" style="font-size: 60px">
+                        MATE SHOSES
+                    </h1>
+                    <p class="text-light pe-5">
+                        This Mate Shoes remakes a classic with new colours and textures,
+                        giving you a fresh look with a familiar feel. Premium materials
+                        and accents give modern expression to an all-time favourite.
+                    </p>
+                </div>
+                <div class="col">
+                    <img src="images/s-img-1_1440x.webp" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="container-fluid py-5 bg-secondary-subtle" id="m-n">
+        <div class="container">
+            <div class="row gap-4 mb-5 flex-column flex-lg-row" id="m-n">
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="images/2_4ef9cef0-cfb3-4749-9b86-47e875f1e436_1080x.webp" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-3">Converse Run Star Hike</h5>
+                            <p class="card-text text-success fs-4 fw-bold">$140.00</p>
+                            <a href="#" class="btn btn-warning fw-bold">Add To cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="images/1_f958add1-72dc-4755-950a-198be27983c9_1120x.webp" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-3">
+                                Jordan Luka 1 Basketball
+                            </h5>
+                            <p class="card-text text-success fs-4 fw-bold">$167.00</p>
+                            <a href="#" class="btn btn-warning fw-bold">Add To cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="images/1_a05ed37f-4982-474b-b568-b6af680d3b67_720x.webp" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-3">
+                                Nike Air Jordan 13 Retro
+                            </h5>
+                            <p class="card-text text-success fs-4 fw-bold">$166.00</p>
+                            <a href="#" class="btn btn-warning fw-bold">Add To cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center align-items-center gap-4 flex-column flex-lg-row" id="bharat"></div>
+
+            <div class="row justify-content-center align-items-center gap-4 flex-column flex-lg-row" id="m-n">
+                <div class="col">
+                    <img src="images/shoes-airforce_1080x.webp" class="rounded-bottom-pill rounded-circle img-fluid" />
+                </div>
+                <div class="col">
+                    <div class="card border-0 rounded-5">
+                        <img src="images/img-12_1728x.webp" class="card-img-top rounded-5" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-3">ADIDAS RUNNING SHOES</h5>
+                            <p class="card-text text-success fs-4 fw-bold">FROM $44,99</p>
+                            <a href="#" class="btn btn-warning fw-bold">Add To cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row gap-4 mb-5 flex-column flex-lg-row mt-5" id="row2"></div>
+
+            <div class="row justify-content-center align-items-center mt-5 gap-4 flex-column flex-lg-row" id="m-n">
+                <div class="col">
+                    <div class="card border-0 rounded-5">
+                        <img src="images/img-11_1728x.webp" class="card-img-top rounded-5" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-3">CONVERSE GRAFFITI</h5>
+                            <p class="card-text text-success fs-4 fw-bold">FROM $44,99</p>
+                            <a href="#" class="btn btn-warning fw-bold">Add To cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/banner_1080x.webp" class="rounded-top-pill rounded-bottom-circle img-fluid" />
+                </div>
+            </div>
+
+            <div class="row gap-4 mt-5 flex-column flex-lg-row" id="m-n">
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="images/1_bc3dad74-0976-4dfb-9ddd-f114b5f749a9_900x.webp" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-3">Converse Run Star Hike</h5>
+                            <p class="card-text text-success fs-4 fw-bold">$140.00</p>
+                            <a href="#" class="btn btn-warning fw-bold">Add To cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="images/1_b9031b1f-9cd3-4b89-b631-49ffad9e948d_900x.webp" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-3">
+                                Jordan Luka 1 Basketball
+                            </h5>
+                            <p class="card-text text-success fs-4 fw-bold">$167.00</p>
+                            <a href="#" class="btn btn-warning fw-bold">Add To cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="images/1_1ae3f0a2-2730-4809-bd48-fd212749e15a_540x.webp" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold fs-3">
+                                Nike Air Jordan 13 Retro
+                            </h5>
+                            <p class="card-text text-success fs-4 fw-bold">$166.00</p>
+                            <a href="#" class="btn btn-warning fw-bold">Add To cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer container-fluid bg-black text-light py-5">
+        <div class="container">
+            <div class="row gap-4 flex-column flex-lg-row">
+                <div class="col">
+                    <h3 class="fw-bold f">COMPANY</h3>
+                    <p class="f">About</p>
+                    <p class="f">Contact</p>
+                    <p class="f">Share Location</p>
+                    <p class="f">Careers</p>
+                </div>
+
+                <div class="col">
+                    <h4 class="fw-bold">SIGN UP NOW & GET 10% OFF</h4>
+                    <p>
+                        Be the first to know about our new arrivals and exclusive offers.
+                    </p>
+                    <input type="text" placeholder="YOUR EMAIL ADDRESS" class="py-3 px-3 fs-6 w-100 rounded-5"
+                        style="outline: none" />
+
+                    <div class="d-flex justify-content-center gap-4 mt-3 f2">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-pinterest"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-vimeo"></i>
+                    </div>
+                </div>
+
+                <div class="col text-start text-lg-end">
+                    <h3 class="fw-bold f">Help</h3>
+                    <p class="f">Order Tracking</p>
+                    <p class="f">FAQ's</p>
+                    <p class="f">Privacy Policy</p>
+                    <p class="f">Terms & Conditions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+        $(".to").click(function () {
+            $(".head").toggleClass("m2");
+        });
+
+        $("#user").click(function () {
+            $(".drop").toggleClass("db");
+        });
+    </script>
+
+    <!-- onclick="(window.location.href='index2.html')" -->
+</body>
+
+</html>

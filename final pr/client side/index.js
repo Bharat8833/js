@@ -212,11 +212,11 @@ function product() {
     alert('jkhgecdxioel');
     let pdata = JSON.parse(localStorage.getItem("productdetail"));
 
-    let data = document.getElementById('catn').innerHTML;
+    let data = JSON.parse(localStorage.getItem("catagory"));
     let row = '';
+    for (let i = 0; i < data.arr.length; i++) {
+        for (let i = 0; i < pdata.arr.length; i++) {
 
-    for (let i = 0; i < pdata.arr.length; i++) {
-        
             if (pdata.arr[i].catname == data) {
                 row += `<div class="col " >
                                 <div class="card border-0">
@@ -230,8 +230,9 @@ function product() {
                         </div>`
             }
 
-        
 
+
+        }
     }
     document.getElementById('bharat').innerHTML = row;
 }

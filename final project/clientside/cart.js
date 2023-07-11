@@ -2,7 +2,7 @@ dispaly();
 
 function dispaly() {
     let acdata = JSON.parse(localStorage.getItem("addtocart"));
-    // let data = JSON.parse(localStorage.getItem("productdetail"));
+    let data = JSON.parse(localStorage.getItem("productdetail"));
 
     let dt = "<tr>";
     dt += "<th align='center'>ID</th>";
@@ -23,13 +23,18 @@ function dispaly() {
             dt += "<td>" + acdata.arr[i].acname + "</td>";
             dt += "<td>" + acdata.arr[i].acprice + "</td>";
             dt += "<td>" + acdata.arr[i].acdis + "</td>";
+            if(data.arr[i].catname != acdata.arr[i].qantity){
+                dt += "<td>" + 1 + "</td>";
+            }else{
+
+            }
             dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.arr[i].id + ")' value='Delete'></td>";
             dt += "</tr>";
         }
     }
     dt += "<tr>";
     dt += "<td colspan='3'>TOTAL</td>";
-    dt += "<td colspan='3'>" + eqal() + "</td>";
+    dt += "<td colspan='4'>" + eqal() + "</td>";
     dt += "</tr>";
     document.getElementById("cart").innerHTML = dt;
 }
@@ -55,7 +60,7 @@ function eqal() {
     let data = JSON.parse(localStorage.getItem("addtocart"));
 
     let sum = data.arr.map((o) => o.acprice)
-    let t = sum.reduce((a, c) => { return parseInt(a) + parseInt(c); });
+    let t = sum.reduce((a, c) => { return (parseInt(a) + parseInt(c)); });
 
-    console.log(sum);
+    return t;
 }

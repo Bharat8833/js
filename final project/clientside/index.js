@@ -267,13 +267,14 @@ function product(id) {
 
 
 function addc(id) {
-    console.log(id);
+   
     let pdata = JSON.parse(localStorage.getItem("productdetail"));
-    let q = 1;
+   
 
     for (let j = 0; j < pdata.arr.length; j++) {
         let no = pdata.arr[j].id;
         let cid = pdata.arr[j].catname;
+        let q=1;
         if (id == no) {
 
 
@@ -292,9 +293,9 @@ function addc(id) {
 
             let acdata = JSON.parse(localStorage.getItem("addtocart"));
             if (acdata != null) {
-                if (pdata.arr[i].catname != acdata.arr[i].catid) {
+                if (pdata.arr[j].catname != acdata.arr[j].catid) {
                     let len = acdata.arr.length;
-
+                  
                     let obj = {
                         id: len + 1,
                         acname: pdata.arr[j].name,
@@ -302,13 +303,27 @@ function addc(id) {
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
                         qantity:q,
+                        catid: cid
                     }
-
                     acdata.arr.push(obj);
-                    localStorage.setItem("addtocart", JSON.stringify(acdata));
+                    
+                    
                 }else{
-
+                    let len = acdata.arr.length;
+             
+                    let obj = {
+                        id: len + 1,
+                        acname: pdata.arr[j].name,
+                        acimg: pdata.arr[j].image,
+                        acprice: pdata.arr[j].price,
+                        acdis: "20%",
+                        qantity:(q++),
+                        catid: cid
+                    }
+                    acdata.arr.push(obj);
+                   
                 }
+                localStorage.setItem("addtocart", JSON.stringify(acdata));
 
             } else {
                 obj2.arr = [obj];

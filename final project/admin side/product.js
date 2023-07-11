@@ -141,7 +141,7 @@ function display() {
                 if (cid.arr[j].id == cd.arr[i].catname) {
                     dt += "<td>" + cid.arr[j].catagory + "</td>";
                 }
-            }
+            };
             dt += "<td>" + cd.arr[i].name + "</td>";
             dt += "<td>" + cd.arr[i].detail + "</td>";
             dt += "<td>" + cd.arr[i].price + "</td>";

@@ -282,7 +282,7 @@ console.log(id);
                 acimg: pdata.arr[j].image,
                 acprice: pdata.arr[j].price,
                 acdis: "20%",
-                contity : pdata.arr[j].id,
+                qantity : pdata.arr[j].catname,
             }
 
             let obj2 = {};
@@ -297,7 +297,7 @@ console.log(id);
                     acimg: pdata.arr[j].image,
                     acprice: pdata.arr[j].price,
                     acdis: "20%",
-                    contity : pdata.arr[j].id,
+                    qantity : pdata.arr[i].catname,
                 }
                 acdata.arr.push(obj);
                 localStorage.setItem("addtocart", JSON.stringify(acdata));

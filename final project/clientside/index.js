@@ -317,7 +317,7 @@ function addc(id) {
                         acimg: pdata.arr[j].image,
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
-                        qantity:(q++),
+                        qantity:(parseInt(q++)),
                         catid: cid
                     }
                     acdata.arr.push(obj);

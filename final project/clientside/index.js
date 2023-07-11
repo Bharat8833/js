@@ -269,10 +269,11 @@ function product(id) {
 function addc(id) {
 console.log(id);
     let pdata = JSON.parse(localStorage.getItem("productdetail"));
-   
+    let q =1;
+    
     for (let j = 0; j < pdata.arr.length; j++) {
         let no =pdata.arr[j].id;
-        
+        let cid = pdata.arr[j].catname;
         if (id == no ) {
 
 
@@ -282,7 +283,8 @@ console.log(id);
                 acimg: pdata.arr[j].image,
                 acprice: pdata.arr[j].price,
                 acdis: "20%",
-                qantity : pdata.arr[j].catname,
+                qantity : q,
+                catid : cid
             }
 
             let obj2 = {};
@@ -290,7 +292,9 @@ console.log(id);
 
             let acdata = JSON.parse(localStorage.getItem("addtocart"));
             if (acdata != null) {
+                if(pdata.arr[i].catname == acdata.arr[i].)
                 let len = acdata.arr.length;
+               
                 let obj = {
                     id :len+1,
                     acname: pdata.arr[j].name,
@@ -299,6 +303,7 @@ console.log(id);
                     acdis: "20%",
                     qantity : pdata.arr[j].catname,
                 }
+            
                 acdata.arr.push(obj);
                 localStorage.setItem("addtocart", JSON.stringify(acdata));
 

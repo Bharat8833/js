@@ -267,24 +267,24 @@ function product(id) {
 
 
 function addc(id) {
-console.log(id);
+    console.log(id);
     let pdata = JSON.parse(localStorage.getItem("productdetail"));
-    let q =1;
-    
+    let q = 1;
+
     for (let j = 0; j < pdata.arr.length; j++) {
-        let no =pdata.arr[j].id;
+        let no = pdata.arr[j].id;
         let cid = pdata.arr[j].catname;
-        if (id == no ) {
+        if (id == no) {
 
 
             let obj = {
-                id :1,
+                id: 1,
                 acname: pdata.arr[j].name,
                 acimg: pdata.arr[j].image,
                 acprice: pdata.arr[j].price,
                 acdis: "20%",
-                qantity : q,
-                catid : cid
+                qantity: q,
+                catid: cid
             }
 
             let obj2 = {};
@@ -292,20 +292,23 @@ console.log(id);
 
             let acdata = JSON.parse(localStorage.getItem("addtocart"));
             if (acdata != null) {
-                if(pdata.arr[i].catname == acdata.arr[i].)
-                let len = acdata.arr.length;
-               
-                let obj = {
-                    id :len+1,
-                    acname: pdata.arr[j].name,
-                    acimg: pdata.arr[j].image,
-                    acprice: pdata.arr[j].price,
-                    acdis: "20%",
-                    qantity : pdata.arr[j].catname,
+                if (pdata.arr[i].catname != acdata.arr[i].catid) {
+                    let len = acdata.arr.length;
+
+                    let obj = {
+                        id: len + 1,
+                        acname: pdata.arr[j].name,
+                        acimg: pdata.arr[j].image,
+                        acprice: pdata.arr[j].price,
+                        acdis: "20%",
+                        qantity:q,
+                    }
+
+                    acdata.arr.push(obj);
+                    localStorage.setItem("addtocart", JSON.stringify(acdata));
+                }else{
+
                 }
-            
-                acdata.arr.push(obj);
-                localStorage.setItem("addtocart", JSON.stringify(acdata));
 
             } else {
                 obj2.arr = [obj];

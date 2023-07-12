@@ -1,4 +1,6 @@
 
+// start set produuct from local storege
+
 
 display();
 
@@ -54,6 +56,12 @@ document.getElementById("btn").addEventListener("click", () => {
 
 });
 
+// end set produuct from local storege
+
+
+
+// start display produuct from local storege
+
 
 function display() {
 
@@ -83,6 +91,12 @@ function display() {
 
 }
 
+// end display produuct from local storege
+
+
+
+// start delet produuct from local storege
+
 function deldata(id) {
     let data = localStorage.getItem("catagory");
     let cd = JSON.parse(data);
@@ -101,6 +115,11 @@ function deldata(id) {
     }
 }
 
+// end delet  produuct from local storege
+
+
+// start edit produuct from local storege
+
 function editdata(id) {
     let data = localStorage.getItem("catagory");
     if (data != null) {
@@ -114,4 +133,4 @@ function editdata(id) {
     }
 }
 
-
+// end edit produuct from local storege

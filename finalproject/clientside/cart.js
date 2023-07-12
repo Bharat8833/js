@@ -5,7 +5,7 @@ dispaly();
 
 function dispaly() {
     let acdata = JSON.parse(localStorage.getItem("addtocart"));
-    let data = JSON.parse(localStorage.getItem("productdetail"));
+   
    
 
     let dt = "<tr>";
@@ -28,6 +28,19 @@ function dispaly() {
             dt += "<td>" + acdata.arr[i].acprice + "</td>";
             dt += "<td>" + acdata.arr[i].acdis + "</td>";
             dt += "<td>" + acdata.arr[i].qantity + "</td>";
+            
+            // let co1 = JSON.parse(localStorage.getItem("productdetail"));
+            // for(let j=0;j<co1.arr.length;j++){
+                // let q = 1;
+            //      if(co1.arr[j].catname == acdata.arr[i].catid ){
+            //          (q++) 
+            //      }else{
+            //           q
+            //     }
+            // }
+            // dt += "<td>" + q + "</td>";
+
+            
             dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.arr[i].id + ")' value='Delete'></td>";
             dt += "</tr>";
         }
@@ -79,3 +92,19 @@ function eqal() {
 // end calculat total of product price in cart
 
 
+function sam(id){
+    
+    let co1 = JSON.parse(localStorage.getItem("productdetail"));
+    let q = 1;
+    for(let i=0;i<co1.arr.length;i++){
+         if(co1.arr[i].catname == id ){
+              q++;
+         }else{
+            q
+        }
+    }
+
+    console.log(q);
+    return q;
+
+}

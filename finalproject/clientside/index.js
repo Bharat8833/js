@@ -266,7 +266,7 @@ function product(id) {
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
                                         <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
-                                        <a href="#" class="btn btn-warning fw-bold")'>Add To cart</a>
+                                        <a href="#" class="btn btn-warning fw-bold" onclick='addc(${pdata.arr[j].id})'>Add To cart</a>
                                     </div>
                                 </div>
                         </div>`
@@ -367,6 +367,8 @@ function addc(id) {
 }
 
 
+
+
 //end add product  to cart
 
 
@@ -378,3 +380,5 @@ function addc(id) {
           document.getElementById('count').innerText=(co.arr[i].id);
        }
 //end get cart items number
+
+

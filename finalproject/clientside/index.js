@@ -371,10 +371,10 @@ function addc(id) {
 
 
 
-    // get cart items number
+//start get cart items number
        let co = JSON.parse(localStorage.getItem("addtocart"));
         
        for(let i=0;i<co.arr.length;i++){
           document.getElementById('count').innerText=(co.arr[i].id);
        }
-  //
+//end get cart items number

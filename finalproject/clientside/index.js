@@ -1,5 +1,7 @@
 
 
+//start resistretion validation
+
 function checkValidData() {
     let nm = document.userform.uname;
     let name = nm.value;
@@ -153,7 +155,11 @@ function checkValidData() {
     return true;
 }
 
+//end resistretion validation
 
+
+
+//start login validation
 
 function check() {
     let pas = document.lform.ps;
@@ -185,7 +191,11 @@ function check() {
 
 }
 
-// get ctagory in menu
+//end login validation
+
+
+
+// start get ctagory in menu
 
 let data = localStorage.getItem("catagory");
 let cd = JSON.parse(data);
@@ -204,9 +214,13 @@ document.getElementById('cat').innerHTML += `<div class="search col-3 flex align
    <i class="fa-solid fa-magnifying-glass text-light fs-4"></i>
 </div>`;
 
+// end get ctagory in menu
 
 
-// get all prodact 
+
+//start get all prodact 
+
+
 let pdata = JSON.parse(localStorage.getItem("productdetail"));
 
 let row = '';
@@ -230,8 +244,13 @@ for (let j = 0; j < pdata.arr.length; j++) {
 document.getElementById('bharat').innerHTML = row;
 
 
+//end get all prodact 
 
-// get category wise product 
+
+
+//start get category wise product 
+
+
 
 function product(id) {
     let pdata = JSON.parse(localStorage.getItem("productdetail"));
@@ -263,8 +282,11 @@ function product(id) {
     }
 }
 
+//end get category wise product
 
 
+
+//start add product  to cart
 
 function addc(id) {
    
@@ -277,7 +299,7 @@ function addc(id) {
         let q = 1;
         if (id == no) {
 
-
+       
             let obj = {
                 id: 1,
                 acname: pdata.arr[j].name,
@@ -287,13 +309,13 @@ function addc(id) {
                 qantity: q,
                 catid: cid
             }
-
+           
             let obj2 = {};
 
 
+     
             let acdata = JSON.parse(localStorage.getItem("addtocart"));
             if (acdata != null) {
-
                 if (pdata.arr[j].catname != acdata.arr[j].catid) {
                     let len = acdata.arr.length;
                   
@@ -307,8 +329,9 @@ function addc(id) {
                         catid: cid
                     }
                     acdata.arr.push(obj);
-                    
                     localStorage.setItem("addtocart", JSON.stringify(acdata));
+                   
+                    
                 }else{
 
                     let len = acdata.arr.length;
@@ -319,17 +342,20 @@ function addc(id) {
                         acimg: pdata.arr[j].image,
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
-                        qantity:q,
+                        qantity:(q+1),
                         catid: cid
                     }
                     acdata.arr.push(obj);
                     localStorage.setItem("addtocart", JSON.stringify(acdata));
+                   
                     }
+                    
                 }
 
              else {
                 obj2.arr = [obj];
                 localStorage.setItem("addtocart", JSON.stringify(obj2));
+              
             }
 
 
@@ -337,6 +363,18 @@ function addc(id) {
         }
 
     }
+
 }
 
 
+   //end add product  to cart
+
+
+
+    // get cart items number
+       let co = JSON.parse(localStorage.getItem("addtocart"));
+        
+       for(let i=0;i<co.arr.length;i++){
+          document.getElementById('count').innerText=(co.arr[i].id);
+       }
+  //

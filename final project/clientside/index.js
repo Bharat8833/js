@@ -274,7 +274,7 @@ function addc(id) {
     for (let j = 0; j < pdata.arr.length; j++) {
         let no = pdata.arr[j].id;
         let cid = pdata.arr[j].catname;
-       
+        let q = 1;
         if (id == no) {
 
 
@@ -284,7 +284,7 @@ function addc(id) {
                 acimg: pdata.arr[j].image,
                 acprice: pdata.arr[j].price,
                 acdis: "20%",
-                qantity: 1,
+                qantity: q,
                 catid: cid
             }
 
@@ -302,7 +302,7 @@ function addc(id) {
                         acimg: pdata.arr[j].image,
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
-                        qantity: 1,
+                        qantity: q,
                         catid: cid
                     }
                     acdata.arr.push(obj);

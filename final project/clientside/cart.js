@@ -50,6 +50,7 @@ function deldata(id) {
 
         localStorage.setItem("addtocart", JSON.stringify(cd));
     }
+    dispaly();
 }
 
 function eqal() {

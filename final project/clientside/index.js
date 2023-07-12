@@ -307,23 +307,24 @@ function addc(id) {
                     }
                     acdata.arr.push(obj);
                     
-                    
+                    localStorage.setItem("addtocart", JSON.stringify(acdata));
                 }else{
+                    
                     let len = acdata.arr.length;
-             
+                  
                     let obj = {
                         id: len + 1,
                         acname: pdata.arr[j].name,
                         acimg: pdata.arr[j].image,
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
-                        qantity:(parseInt(q++)),
+                        qantity:q,
                         catid: cid
                     }
                     acdata.arr.push(obj);
-                   
+                    
+                    localStorage.setItem("addtocart", JSON.stringify(acdata));
                 }
-                localStorage.setItem("addtocart", JSON.stringify(acdata));
 
             } else {
                 obj2.arr = [obj];

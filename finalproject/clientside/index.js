@@ -293,7 +293,7 @@ function addc(id) {
 
             let acdata = JSON.parse(localStorage.getItem("addtocart"));
             if (acdata != null) {
-<<<<<<< HEAD
+
                 if (pdata.arr[j].catname != acdata.arr[j].catid) {
                     let len = acdata.arr.length;
                   
@@ -311,9 +311,9 @@ function addc(id) {
                     localStorage.setItem("addtocart", JSON.stringify(acdata));
                 }else{
                     
-=======
+
          
->>>>>>> 082ca1f008856ca04c668c8717bad801b8ae9298
+
                     let len = acdata.arr.length;
                   
                     let obj = {
@@ -322,20 +322,12 @@ function addc(id) {
                         acimg: pdata.arr[j].image,
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
-<<<<<<< HEAD
                         qantity:q,
                         catid: cid
                     }
                     acdata.arr.push(obj);
-                    
-=======
-                        qantity: q,
-                        catid: cid
-                    }
-                    acdata.arr.push(obj);
-                   
->>>>>>> 082ca1f008856ca04c668c8717bad801b8ae9298
                     localStorage.setItem("addtocart", JSON.stringify(acdata));
+                    }
                 }
 
              else {

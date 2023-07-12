@@ -367,7 +367,7 @@ function addc(id) {
 }
 
 
-   //end add product  to cart
+//end add product  to cart
 
 
 

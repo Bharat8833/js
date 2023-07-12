@@ -1,3 +1,6 @@
+
+// start display product to cart
+
 dispaly();
 
 function dispaly() {
@@ -31,10 +34,15 @@ function dispaly() {
     }
     dt += "<tr>";
     dt += "<td colspan='3'>TOTAL</td>";
-    dt += "<td colspan='4'>" + eqal() + "</td>";
+    dt += "<td colspan='4'>$" + eqal() + "</td>";
     dt += "</tr>";
     document.getElementById("cart").innerHTML = dt;
 }
+
+// end display product to cart
+
+
+// start remove product to cart
 
 function deldata(id) {
     let data = localStorage.getItem("addtocart");
@@ -54,6 +62,11 @@ function deldata(id) {
     dispaly();
 }
 
+// end remove product to cart
+
+
+// start calculat total of product price in cart
+
 function eqal() {
     let data = JSON.parse(localStorage.getItem("addtocart"));
 
@@ -63,5 +76,6 @@ function eqal() {
     return t;
 }
 
+// end calculat total of product price in cart
 
 

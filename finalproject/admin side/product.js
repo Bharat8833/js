@@ -1,4 +1,8 @@
 
+
+// start display catagory in menu
+
+
 let lid = JSON.parse(localStorage.getItem('catagory'));
 
 if (lid != null) {
@@ -12,8 +16,10 @@ if (lid != null) {
 };
 
 
+// end display catagory in menu
 
 
+// start set product detail in localstorage
 
 document.getElementById("pimg").addEventListener("change", () => {
     let pimg = document.getElementById('pimg');
@@ -115,6 +121,11 @@ document.getElementById('btn').addEventListener('click', () => {
 });
 
 
+// end set product detail in localstorage
+
+
+
+// start dispaly product detail in localstorage
 
 function display() {
 
@@ -156,6 +167,11 @@ function display() {
 }
 
 
+// end dispaly product detail in localstorage
+
+
+// start delet product detail in localstorage
+
 function deldata(id) {
     let data = localStorage.getItem("productdetail");
     let cd = JSON.parse(data);
@@ -174,6 +190,10 @@ function deldata(id) {
     }
 }
 
+// end delet product detail in localstorage
+
+
+// start edit product detail in localstorage
 
 function editdata(id) {
 
@@ -191,3 +211,5 @@ function editdata(id) {
         }
     }
 }
+
+// end edit product detail in localstorage

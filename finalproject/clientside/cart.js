@@ -34,7 +34,7 @@ function dispaly() {
     }
     dt += "<tr>";
     dt += "<td colspan='3'>TOTAL</td>";
-    dt += "<td colspan='4'>$" + eqal() + "</td>";
+    dt += "<td colspan='4'>$ " + eqal() + "</td>";
     dt += "</tr>";
     document.getElementById("cart").innerHTML = dt;
 }

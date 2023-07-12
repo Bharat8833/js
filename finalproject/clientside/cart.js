@@ -25,13 +25,6 @@ function dispaly() {
             dt += "<td>" + acdata.arr[i].acprice + "</td>";
             dt += "<td>" + acdata.arr[i].acdis + "</td>";
             dt += "<td>" + acdata.arr[i].qantity + "</td>";
-
-            // let q = 1;
-            // if(data.arr[i].catname != acdata.arr[i].qantity){
-            //     dt += "<td>" + q + "</td>";
-            // }else{
-            //     dt += "<td>" + (q++) + "</td>";
-            // }
             dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.arr[i].id + ")' value='Delete'></td>";
             dt += "</tr>";
         }

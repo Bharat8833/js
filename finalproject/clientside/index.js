@@ -310,9 +310,6 @@ function addc(id) {
                     
                     localStorage.setItem("addtocart", JSON.stringify(acdata));
                 }else{
-                    
-
-         
 
                     let len = acdata.arr.length;
                   

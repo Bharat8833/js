@@ -28,7 +28,7 @@ function dispaly() {
             dt += "<td>" + acdata.arr[i].acprice + "</td>";
             dt += "<td>" + acdata.arr[i].acdis + "</td>";
             dt += "<td>" + acdata.arr[i].qantity + "</td>";
-
+            
             dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.arr[i].id + ")' value='Delete'></td>";
             dt += "</tr>";
         }

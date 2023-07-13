@@ -233,7 +233,7 @@ for (let j = 0; j < pdata.arr.length; j++) {
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
                                     <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
-                                    <a href="#" class="btn btn-warning fw-bold" onclick='addc(${pdata.arr[j].id})'>Add To cart</a>
+                                    <a href="#" class="btn btn-warning fw-bold" onclick='addToCart(${pdata.arr[j].id})'>Add To cart</a>
                                 </div>
                             </div>
                     </div>`
@@ -266,7 +266,7 @@ function product(id) {
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
                                         <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
-                                        <a href="#" class="btn btn-warning fw-bold" onclick='addc(${pdata.arr[j].id})'>Add To cart</a>
+                                        <a href="#" class="btn btn-warning fw-bold" onclick='addToCart(${pdata.arr[j].id})'>Add To cart</a>
                                     </div>
                                 </div>
                         </div>`
@@ -289,17 +289,17 @@ function product(id) {
 //start add product  to cart
 
 function addc(id) {
-   
+
     let pdata = JSON.parse(localStorage.getItem("productdetail"));
-   
 
     for (let j = 0; j < pdata.arr.length; j++) {
         let no = pdata.arr[j].id;
         let cid = pdata.arr[j].catname;
-       
+
+        let q = 1
         if (id == no) {
 
-         let q=1
+
             let obj = {
                 id: 1,
                 acname: pdata.arr[j].name,
@@ -309,14 +309,22 @@ function addc(id) {
                 qantity: q,
                 catid: cid
             }
-           
+
             let obj2 = {};
 
 
-     
+
             let acdata = JSON.parse(localStorage.getItem("addtocart"));
             if (acdata != null) {
-             
+
+                if (pdata.arr[j].id == acdata.arr[j].id) {
+
+                    acdata.arr[j].qantity = (q + 1);
+                    // acdata.arr[j].qantity = (q + 1);
+                    // acdata.arr.push(obj)
+                    localStorage.setItem("addtocart", JSON.stringify(acdata));
+                } else {
+
                     let len = acdata.arr.length;
                     let obj = {
                         id: len + 1,
@@ -324,30 +332,99 @@ function addc(id) {
                         acimg: pdata.arr[j].image,
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
-                        qantity:q,
+                        qantity: q,
                         catid: cid
                     }
                     acdata.arr.push(obj)
                     localStorage.setItem("addtocart", JSON.stringify(acdata));
-                    
-                }
-                
 
-             else {
+                }
+
+
+            } else {
                 obj2.arr = [obj];
                 localStorage.setItem("addtocart", JSON.stringify(obj2));
-              
+
             }
 
 
 
         }
 
+
     }
+
     count();
 
 }
 
+function addToCart(pid) {
+
+    let cartdata = JSON.parse(localStorage.getItem("addtocart"));
+    let obj = null;
+    if (cartdata != null) {
+        obj = cartdata.cart.find((res) => {
+            return res.pid == pid;
+        });
+        
+        if (obj != null) {
+            for(let i=0;i<cartdata.cart.length;i++){
+                if(cartdata.cart[i].pid == pid){
+                    cartdata.cart[i].qantity += 1;
+                }
+            }
+            // obj.qantity += 1;
+            // let newarr = {};
+            // newarr.cart = [oldCartData];
+            // localStorage.setItem("addtocart", JSON.stringify(newarr));
+        } else {
+            let pdata = JSON.parse(localStorage.getItem("productdetail"));
+            if (pdata != null) {
+                let prodData = pdata.arr.find((res) => {
+                    return res.id == pid;
+                });
+                obj = {
+                    id: 1,
+                    pid: pid,
+                    acname: prodData.name,
+                    acimg: prodData.image,
+                    acprice: prodData.price,
+                    acdis: "20%",
+                    qantity: 1,
+                    catid: prodData.catname
+                }
+               
+            }
+            cartdata.cart.push(obj);
+        }
+
+                localStorage.setItem("addtocart", JSON.stringify(cartdata));
+    }
+
+    else {
+        let pdata = JSON.parse(localStorage.getItem("productdetail"));
+        if (pdata != null) {
+            let prodData = pdata.arr.find((res) => {
+                return res.id == pid;
+            });
+            let obj = {
+                id: 1,
+                pid: pid,
+                acname: prodData.name,
+                acimg: prodData.image,
+                acprice: prodData.price,
+                acdis: "20%",
+                qantity: 1,
+                catid: prodData.catname
+            }
+            acdata = {};
+            acdata.cart = [obj];
+            localStorage.setItem("addtocart", JSON.stringify(acdata));
+        }
+    }
+
+
+}
 
 
 
@@ -356,17 +433,17 @@ function addc(id) {
 
 
 //start get cart items number
-function count(){
-       let co = JSON.parse(localStorage.getItem("addtocart"));
-        
-       for(let i=0;i<co.arr.length;i++){
-          document.getElementById('count').innerText=(co.arr[i].id);
-          
-       }
+function count() {
+    let co = JSON.parse(localStorage.getItem("addtocart"));
+
+    for (let i = 0; i < co.arr.length; i++) {
+        document.getElementById('count').innerText = (co.arr[i].id);
 
     }
 
-    count();
+}
+
+count();
 //end get cart items number
 
 

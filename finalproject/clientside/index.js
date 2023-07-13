@@ -233,7 +233,7 @@ for (let j = 0; j < pdata.arr.length; j++) {
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
                                     <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
-                                    <a href="#" class="btn btn-warning fw-bold" onclick='addToCart(${pdata.arr[j].id})'>Add To cart</a>
+                                    <a href="#" class="btn btn-warning fw-bold" onclick='addc(${pdata.arr[j].id})'>Add To cart</a>
                                 </div>
                             </div>
                     </div>`
@@ -266,7 +266,7 @@ function product(id) {
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
                                         <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
-                                        <a href="#" class="btn btn-warning fw-bold" onclick='addToCart(${pdata.arr[j].id})'>Add To cart</a>
+                                        <a href="#" class="btn btn-warning fw-bold" onclick='addc(${pdata.arr[j].id})'>Add To cart</a>
                                     </div>
                                 </div>
                         </div>`
@@ -294,54 +294,51 @@ function addc(id) {
 
     for (let j = 0; j < pdata.arr.length; j++) {
         let no = pdata.arr[j].id;
-        let cid = pdata.arr[j].catname;
 
-        let q = 1
         if (id == no) {
-
-
-            let obj = {
-                id: 1,
-                acname: pdata.arr[j].name,
-                acimg: pdata.arr[j].image,
-                acprice: pdata.arr[j].price,
-                acdis: "20%",
-                qantity: q,
-                catid: cid
-            }
-
-            let obj2 = {};
-
-
 
             let acdata = JSON.parse(localStorage.getItem("addtocart"));
             if (acdata != null) {
 
-                if (pdata.arr[j].id == acdata.arr[j].id) {
+                if (pdata.arr[j].id == acdata.arr[j].pid) {
 
-                    acdata.arr[j].qantity = (q + 1);
-                    // acdata.arr[j].qantity = (q + 1);
-                    // acdata.arr.push(obj)
-                    localStorage.setItem("addtocart", JSON.stringify(acdata));
+                    acdata.arr[j].qantity += 1;
+
+                
+                  
                 } else {
 
                     let len = acdata.arr.length;
                     let obj = {
                         id: len + 1,
+                        pid: pdata.arr[j].id,
                         acname: pdata.arr[j].name,
                         acimg: pdata.arr[j].image,
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
-                        qantity: q,
-                        catid: cid
+                        qantity: 1,
+                       
                     }
-                    acdata.arr.push(obj)
-                    localStorage.setItem("addtocart", JSON.stringify(acdata));
 
+                    acdata.arr.push(obj)
+                    
                 }
+                localStorage.setItem("addtocart", JSON.stringify(acdata));
 
 
             } else {
+                let obj = {
+                    id: 1,
+                    pid: pdata.arr[j].id,
+                    acname: pdata.arr[j].name,
+                    acimg: pdata.arr[j].image,
+                    acprice: pdata.arr[j].price,
+                    acdis: "20%",
+                    qantity: 1,
+                    
+                }
+    
+                let obj2 = {};
                 obj2.arr = [obj];
                 localStorage.setItem("addtocart", JSON.stringify(obj2));
 
@@ -373,10 +370,7 @@ function addToCart(pid) {
                     cartdata.cart[i].qantity += 1;
                 }
             }
-            // obj.qantity += 1;
-            // let newarr = {};
-            // newarr.cart = [oldCartData];
-            // localStorage.setItem("addtocart", JSON.stringify(newarr));
+            
         } else {
             let pdata = JSON.parse(localStorage.getItem("productdetail"));
             if (pdata != null) {

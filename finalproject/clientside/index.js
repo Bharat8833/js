@@ -328,13 +328,22 @@ function addc(id) {
                         qantity:1,
                         catid: cid
                     }
-                    acdata.arr[j].qantity = 1;
+                   
+                    
                     localStorage.setItem("addtocart", JSON.stringify(acdata));
                    
                     
-                }
+                }else{
+                    acdata.arr[j].qantity = 1+1;
+                    localStorage.setItem("addtocart", JSON.stringify(acdata));
+                   
+                    }
+                    
+                    acdata.arr.push(obj);
+                    localStorage.setItem("addtocart", JSON.stringify(acdata));
                     
                 }
+                
 
              else {
                 obj2.arr = [obj];

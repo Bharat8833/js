@@ -296,7 +296,7 @@ function addc(id) {
     for (let j = 0; j < pdata.arr.length; j++) {
         let no = pdata.arr[j].id;
         let cid = pdata.arr[j].catname;
-        let q = 1;
+       
         if (id == no) {
 
        
@@ -306,7 +306,7 @@ function addc(id) {
                 acimg: pdata.arr[j].image,
                 acprice: pdata.arr[j].price,
                 acdis: "20%",
-                qantity: q,
+                qantity: 1,
                 catid: cid
             }
            
@@ -325,30 +325,14 @@ function addc(id) {
                         acimg: pdata.arr[j].image,
                         acprice: pdata.arr[j].price,
                         acdis: "20%",
-                        qantity:q,
+                        qantity:1,
                         catid: cid
                     }
-                    acdata.arr.push(obj);
+                    acdata.arr[j].qantity = 1;
                     localStorage.setItem("addtocart", JSON.stringify(acdata));
                    
                     
-                }else{
-
-                    let len = acdata.arr.length;
-                  
-                    let obj = {
-                        id: len + 1,
-                        acname: pdata.arr[j].name,
-                        acimg: pdata.arr[j].image,
-                        acprice: pdata.arr[j].price,
-                        acdis: "20%",
-                        qantity:(q+1),
-                        catid: cid
-                    }
-                    acdata.arr.push(obj);
-                    localStorage.setItem("addtocart", JSON.stringify(acdata));
-                   
-                    }
+                }
                     
                 }
 
@@ -363,6 +347,7 @@ function addc(id) {
         }
 
     }
+    count();
 
 }
 
@@ -374,11 +359,17 @@ function addc(id) {
 
 
 //start get cart items number
+function count(){
        let co = JSON.parse(localStorage.getItem("addtocart"));
         
        for(let i=0;i<co.arr.length;i++){
           document.getElementById('count').innerText=(co.arr[i].id);
+          
        }
+
+    }
+
+    count();
 //end get cart items number
 
 

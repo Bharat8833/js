@@ -5,8 +5,8 @@ dispaly();
 
 function dispaly() {
     let acdata = JSON.parse(localStorage.getItem("addtocart"));
-   
-   
+
+
 
     let dt = "<tr>";
     dt += "<th align='center'>ID</th>";
@@ -28,19 +28,7 @@ function dispaly() {
             dt += "<td>" + acdata.arr[i].acprice + "</td>";
             dt += "<td>" + acdata.arr[i].acdis + "</td>";
             dt += "<td>" + acdata.arr[i].qantity + "</td>";
-            
-            // let co1 = JSON.parse(localStorage.getItem("productdetail"));
-            // for(let j=0;j<co1.arr.length;j++){
-                // let q = 1;
-            //      if(co1.arr[j].catname == acdata.arr[i].catid ){
-            //          (q++) 
-            //      }else{
-            //           q
-            //     }
-            // }
-            // dt += "<td>" + q + "</td>";
 
-            
             dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.arr[i].id + ")' value='Delete'></td>";
             dt += "</tr>";
         }
@@ -61,16 +49,18 @@ function deldata(id) {
     let data = localStorage.getItem("addtocart");
     let cd = JSON.parse(data);
     if (cd != null && cd.arr.length > 0) {
-        id1 = id - 1;
-        cd.arr.splice(id1, 1);
+     
+            id1 = id - 1;
+            cd.arr.splice(id1, 1);
 
-        let a = 1;
-        for (let i = 0; i < cd.arr.length; i++) {
-            cd.arr[i].id = a;
-            a++;
-        }
+            let a = 1;
+            for (let i = 0; i < cd.arr.length; i++) {
+                cd.arr[i].id = a;
+                a++;
+                
+            }
 
-        localStorage.setItem("addtocart", JSON.stringify(cd));
+            localStorage.setItem("addtocart", JSON.stringify(cd));
     }
     dispaly();
 }
@@ -92,14 +82,14 @@ function eqal() {
 // end calculat total of product price in cart
 
 
-function sam(id){
-    
+function sam(id) {
+
     let co1 = JSON.parse(localStorage.getItem("productdetail"));
     let q = 1;
-    for(let i=0;i<co1.arr.length;i++){
-         if(co1.arr[i].catname == id ){
-              q++;
-         }else{
+    for (let i = 0; i < co1.arr.length; i++) {
+        if (co1.arr[i].catname == id) {
+            q++;
+        } else {
             q
         }
     }

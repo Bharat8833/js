@@ -299,7 +299,7 @@ function addc(id) {
 
             let acdata = JSON.parse(localStorage.getItem("addtocart"));
             if (acdata != null) {
-
+               
                 if (pdata.arr[j].id == acdata.arr[j].pid) {
 
                     acdata.arr[j].qantity += 1;
@@ -320,9 +320,10 @@ function addc(id) {
                        
                     }
 
-                    acdata.arr.push(obj)
                     
+                    acdata.arr.push(obj)
                 }
+            
                 localStorage.setItem("addtocart", JSON.stringify(acdata));
 
 
@@ -344,7 +345,7 @@ function addc(id) {
 
             }
 
-
+        
 
         }
 
@@ -370,7 +371,7 @@ function addToCart(pid) {
                     cartdata.cart[i].qantity += 1;
                 }
             }
-            
+
         } else {
             let pdata = JSON.parse(localStorage.getItem("productdetail"));
             if (pdata != null) {

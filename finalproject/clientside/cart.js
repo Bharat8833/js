@@ -28,7 +28,7 @@ function dispaly() {
             dt += "<td>" + acdata.arr[i].acprice + "</td>";
             dt += "<td>" + acdata.arr[i].acdis + "</td>";
             dt += "<td>" + acdata.arr[i].qantity + "</td>";
-            
+
             dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.arr[i].id + ")' value='Delete'></td>";
             dt += "</tr>";
         }
@@ -48,8 +48,22 @@ function dispaly() {
 function deldata(id) {
     let data = localStorage.getItem("addtocart");
     let cd = JSON.parse(data);
+  
+
+
     if (cd != null && cd.arr.length > 0) {
-     
+        obj = cd.arr.find((res) => {
+            return res.qantity ;
+        });
+ 
+       console.log(obj.qantity);
+        if ( obj.qantity > 1) {
+            obj.qantity -= 1;
+            cd = obj;
+        //  return false;
+        } else {
+
+           
             id1 = id - 1;
             cd.arr.splice(id1, 1);
 
@@ -57,10 +71,10 @@ function deldata(id) {
             for (let i = 0; i < cd.arr.length; i++) {
                 cd.arr[i].id = a;
                 a++;
-                
-            }
 
-            localStorage.setItem("addtocart", JSON.stringify(cd));
+            }
+        } 
+        localStorage.setItem("addtocart", JSON.stringify(cd));
     }
     dispaly();
 }

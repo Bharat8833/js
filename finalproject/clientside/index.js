@@ -152,6 +152,7 @@ function checkValidData() {
     localStorage.setItem("username", name);
     localStorage.setItem("useremail", email);
     localStorage.setItem("userpsw", pas);
+    
     return true;
 }
 
@@ -187,7 +188,7 @@ function check() {
         return false;
     }
 
-    window.location.href = "index.html";
+   
 
 }
 

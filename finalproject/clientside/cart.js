@@ -19,17 +19,17 @@ function dispaly() {
     dt += "</tr>";
 
     document.getElementById("cart").innerHTML = dt;
-    for (let i = 0; i < acdata.arr.length; i++) {
+    for (let i = 0; i < acdata.cart.length; i++) {
         if (acdata != null) {
             dt += "<tr>";
-            dt += "<td>" + acdata.arr[i].id + "</td>";
-            dt += "<td> <img src='" + acdata.arr[i].acimg + "' hight='100px' width='200px'></td>";
-            dt += "<td>" + acdata.arr[i].acname + "</td>";
-            dt += "<td>" + acdata.arr[i].acprice + "</td>";
-            dt += "<td>" + acdata.arr[i].acdis + "</td>";
-            dt += "<td>" + acdata.arr[i].qantity + "</td>";
+            dt += "<td>" + acdata.cart[i].id + "</td>";
+            dt += "<td> <img src='" + acdata.cart[i].acimg + "' hight='100px' width='200px'></td>";
+            dt += "<td>" + acdata.cart[i].acname + "</td>";
+            dt += "<td>" + acdata.cart[i].acprice + "</td>";
+            dt += "<td>" + acdata.cart[i].acdis + "</td>";
+            dt += "<td>" + acdata.cart[i].qantity + "</td>";
 
-            dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.arr[i].id + ")' value='Delete'></td>";
+            dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.cart[i].id + ")' value='Delete'></td>";
             dt += "</tr>";
         }
     }
@@ -51,8 +51,8 @@ function deldata(id) {
   
 
 
-    if (cd != null && cd.arr.length > 0) {
-        obj = cd.arr.find((res) => {
+    if (cd != null && cd.cart.length > 0) {
+        obj = cd.cart.find((res) => {
             return res.qantity ;
         });
  
@@ -65,11 +65,11 @@ function deldata(id) {
 
            
             id1 = id - 1;
-            cd.arr.splice(id1, 1);
+            cd.cart.splice(id1, 1);
 
             let a = 1;
-            for (let i = 0; i < cd.arr.length; i++) {
-                cd.arr[i].id = a;
+            for (let i = 0; i < cd.cart.length; i++) {
+                cd.cart[i].id = a;
                 a++;
 
             }
@@ -87,7 +87,7 @@ function deldata(id) {
 function eqal() {
     let data = JSON.parse(localStorage.getItem("addtocart"));
 
-    let sum = data.arr.map((o) => o.acprice)
+    let sum = data.cart.map((o) => o.acprice)
     let t = sum.reduce((a, c) => { return (parseInt(a) + parseInt(c)); });
 
     return t;
@@ -95,20 +95,3 @@ function eqal() {
 
 // end calculat total of product price in cart
 
-
-function sam(id) {
-
-    let co1 = JSON.parse(localStorage.getItem("productdetail"));
-    let q = 1;
-    for (let i = 0; i < co1.arr.length; i++) {
-        if (co1.arr[i].catname == id) {
-            q++;
-        } else {
-            q
-        }
-    }
-
-    console.log(q);
-    return q;
-
-}

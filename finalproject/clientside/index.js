@@ -233,7 +233,7 @@ for (let j = 0; j < pdata.arr.length; j++) {
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
                                     <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
-                                    <a href="#" class="btn btn-warning fw-bold" onclick='addc(${pdata.arr[j].id})'>Add To cart</a>
+                                    <a href="#" class="btn btn-warning fw-bold" onclick='addToCart(${pdata.arr[j].id})'>Add To cart</a>
                                 </div>
                             </div>
                     </div>`
@@ -266,7 +266,7 @@ function product(id) {
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
                                         <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
-                                        <a href="#" class="btn btn-warning fw-bold" onclick='addc(${pdata.arr[j].id})'>Add To cart</a>
+                                        <a href="#" class="btn btn-warning fw-bold" onclick='addToCart(${pdata.arr[j].id})'>Add To cart</a>
                                     </div>
                                 </div>
                         </div>`
@@ -291,6 +291,8 @@ function product(id) {
 function addc(id) {
 
     let pdata = JSON.parse(localStorage.getItem("productdetail"));
+        
+
 
     for (let j = 0; j < pdata.arr.length; j++) {
         let no = pdata.arr[j].id;
@@ -359,6 +361,7 @@ function addc(id) {
 function addToCart(pid) {
 
     let cartdata = JSON.parse(localStorage.getItem("addtocart"));
+    
     let obj = null;
     if (cartdata != null) {
         obj = cartdata.cart.find((res) => {
@@ -378,8 +381,10 @@ function addToCart(pid) {
                 let prodData = pdata.arr.find((res) => {
                     return res.id == pid;
                 });
+
+                let len= cartdata.cart.length;
                 obj = {
-                    id: 1,
+                    id: len+1,
                     pid: pid,
                     acname: prodData.name,
                     acimg: prodData.image,
@@ -398,6 +403,7 @@ function addToCart(pid) {
 
     else {
         let pdata = JSON.parse(localStorage.getItem("productdetail"));
+        
         if (pdata != null) {
             let prodData = pdata.arr.find((res) => {
                 return res.id == pid;
@@ -418,6 +424,8 @@ function addToCart(pid) {
         }
     }
 
+  count();
+  
 
 }
 
@@ -431,8 +439,8 @@ function addToCart(pid) {
 function count() {
     let co = JSON.parse(localStorage.getItem("addtocart"));
 
-    for (let i = 0; i < co.arr.length; i++) {
-        document.getElementById('count').innerText = (co.arr[i].id);
+    for (let i = 0; i < co.cart.length; i++) {
+        document.getElementById('count').innerText = co.cart[i].id;
 
     }
 

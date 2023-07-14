@@ -48,22 +48,18 @@ function dispaly() {
 function deldata(id) {
     let data = localStorage.getItem("addtocart");
     let cd = JSON.parse(data);
-  
-
 
     if (cd != null && cd.cart.length > 0) {
-        obj = cd.cart.find((res) => {
-            return res.qantity ;
-        });
- 
-       console.log(obj.qantity);
-        if ( obj.qantity > 1) {
-            obj.qantity -= 1;
-            cd = obj;
-        //  return false;
-        } else {
 
-           
+        let obj = cd.cart.find((e) => {
+            return e.qantity;
+        })
+
+        if (obj.qantity > 1) {
+            obj.qantity -= 1;
+            cd.obj;
+        }else {
+
             id1 = id - 1;
             cd.cart.splice(id1, 1);
 
@@ -73,11 +69,12 @@ function deldata(id) {
                 a++;
 
             }
-        } 
+        }
         localStorage.setItem("addtocart", JSON.stringify(cd));
     }
     dispaly();
 }
+
 
 // end remove product to cart
 

@@ -135,4 +135,5 @@ function editdata(id) {
 
 // end edit produuct from local storege
 
-
+let n=localStorage.getItem("username");
+document.getElementById('user').innerHTML = n;

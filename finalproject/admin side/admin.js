@@ -15,4 +15,3 @@ document.getElementById('user').innerHTML = n;
 
 
 
-document.getElementById('cate').addEventListener('click')

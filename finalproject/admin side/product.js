@@ -41,6 +41,7 @@ document.getElementById('btn').addEventListener('click', () => {
     let pn = document.pfrm.pn.value;
     let pd = document.pfrm.pd.value;
     let ppr = document.pfrm.ppr.value;
+    let pdi = document.pfrm.pdi.value;
     let ud = document.pfrm.uid.value;
     let catn = document.getElementById('pid').value;
 
@@ -52,6 +53,7 @@ document.getElementById('btn').addEventListener('click', () => {
         name: pn,
         detail: pd,
         price: ppr,
+        discount: pdi,
         image: JSON.parse(localStorage.getItem("pImage"))
     }
 
@@ -74,6 +76,7 @@ document.getElementById('btn').addEventListener('click', () => {
                         pi.arr[i].name = pn;
                         pi.arr[i].detail = pd;
                         pi.arr[i].price = ppr;
+                        pi.arr[i].discount = pdi;
                         if (path != '') {
                             pi.arr[i].image = path;
                         } else {
@@ -97,6 +100,7 @@ document.getElementById('btn').addEventListener('click', () => {
                     name: pn,
                     detail: pd,
                     price: ppr,
+                    discount: pdi,
                     image: JSON.parse(localStorage.getItem("pImage")),
                 }
                 pi.arr.push(pobj);
@@ -136,6 +140,7 @@ function display() {
     dt += "<td align='center'>product name</td>";
     dt += "<td align='center'>detail</td>";
     dt += "<td align='center'>price</td>";
+    dt += "<td align='center'>discount</td>";
     dt += "<td align='center'>img</td>";
     dt += "<td colspan='2' align='center'>Action</td>";
     dt += "</tr>";
@@ -156,6 +161,7 @@ function display() {
             dt += "<td>" + cd.arr[i].name + "</td>";
             dt += "<td>" + cd.arr[i].detail + "</td>";
             dt += "<td>" + cd.arr[i].price + "</td>";
+            dt += "<td>" + cd.arr[i].discount + "</td>";
             dt += "<td> <img src='" + cd.arr[i].image + "' hight='100px' width='200px'></td>";
             dt += "<td> <input type='button' name='edit' id='edit' onclick='editdata(" + cd.arr[i].id + ")' value='Edit'></td>";
             dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + cd.arr[i].id + ")' value='Delete'></td>";

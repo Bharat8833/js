@@ -233,7 +233,7 @@ for (let j = 0; j < pdata.arr.length; j++) {
                                 <img src="${pdata.arr[j].image}" class="card-img-top" />
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
-                                    <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
+                                    <p class="card-text text-success fs-4 fw-bold">₹ ${pdata.arr[j].price}</p>
                                     <a href="#" class="btn btn-warning fw-bold" onclick='addToCart(${pdata.arr[j].id})'>Add To cart</a>
                                 </div>
                             </div>
@@ -266,7 +266,7 @@ function product(id) {
                                     <img src="${pdata.arr[j].image}" class="card-img-top" />
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold fs-3">${pdata.arr[j].name}</h5>
-                                        <p class="card-text text-success fs-4 fw-bold">$ ${pdata.arr[j].price}</p>
+                                        <p class="card-text text-success fs-4 fw-bold">₹ ${pdata.arr[j].price}</p>
                                         <a href="#" class="btn btn-warning fw-bold" onclick='addToCart(${pdata.arr[j].id})'>Add To cart</a>
                                     </div>
                                 </div>
@@ -289,75 +289,7 @@ function product(id) {
 
 //start add product  to cart
 
-function addc(id) {
 
-    let pdata = JSON.parse(localStorage.getItem("productdetail"));
-        
-
-
-    for (let j = 0; j < pdata.arr.length; j++) {
-        let no = pdata.arr[j].id;
-
-        if (id == no) {
-
-            let acdata = JSON.parse(localStorage.getItem("addtocart"));
-            if (acdata != null) {
-               
-                if (pdata.arr[j].id == acdata.arr[j].pid) {
-
-                    acdata.arr[j].qantity += 1;
-
-                
-                  
-                } else {
-
-                    let len = acdata.arr.length;
-                    let obj = {
-                        id: len + 1,
-                        pid: pdata.arr[j].id,
-                        acname: pdata.arr[j].name,
-                        acimg: pdata.arr[j].image,
-                        acprice: pdata.arr[j].price,
-                        acdis: "20%",
-                        qantity: 1,
-                       
-                    }
-
-                    
-                    acdata.arr.push(obj)
-                }
-            
-                localStorage.setItem("addtocart", JSON.stringify(acdata));
-
-
-            } else {
-                let obj = {
-                    id: 1,
-                    pid: pdata.arr[j].id,
-                    acname: pdata.arr[j].name,
-                    acimg: pdata.arr[j].image,
-                    acprice: pdata.arr[j].price,
-                    acdis: "20%",
-                    qantity: 1,
-                    
-                }
-    
-                let obj2 = {};
-                obj2.arr = [obj];
-                localStorage.setItem("addtocart", JSON.stringify(obj2));
-
-            }
-
-        
-
-        }
-
-
-    }
-
-    count();
-
-}
 
 function addToCart(pid) {
 
@@ -390,7 +322,7 @@ function addToCart(pid) {
                     acname: prodData.name,
                     acimg: prodData.image,
                     acprice: prodData.price,
-                    acdis: "20%",
+                    acdis: prodData.discount,
                     qantity: 1,
                     catid: prodData.catname
                 }
@@ -415,7 +347,7 @@ function addToCart(pid) {
                 acname: prodData.name,
                 acimg: prodData.image,
                 acprice: prodData.price,
-                acdis: "20%",
+                acdis: prodData.discount,
                 qantity: 1,
                 catid: prodData.catname
             }

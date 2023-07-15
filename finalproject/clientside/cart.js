@@ -9,11 +9,11 @@ function dispaly() {
 
 
     let dt = "<tr>";
-    dt += "<th align='center'>ID</th>";
-    dt += "<th align='center'>produvt image</th>";
-    dt += "<th align='center'>product name</th>";
-    dt += "<th align='center'>price($)</th>";
-    dt += "<th align='center'>discount</th>";
+    // dt += "<th align='center'>ID</th>";
+    dt += "<th align='center'>Product image</th>";
+    dt += "<th align='center'>Product name</th>";
+    dt += "<th align='center'>Price(₹)</th>";
+    dt += "<th align='center'>Discount</th>";
     dt += "<th align='center'>Qantity</th>";
     dt += "<th colspan='2' align='center'>Action</th>";
     dt += "</tr>";
@@ -22,7 +22,7 @@ function dispaly() {
     for (let i = 0; i < acdata.cart.length; i++) {
         if (acdata != null) {
             dt += "<tr>";
-            dt += "<td>" + acdata.cart[i].id + "</td>";
+            // dt += "<td>" + acdata.cart[i].id + "</td>";
             dt += "<td> <img src='" + acdata.cart[i].acimg + "' hight='100px' width='200px'></td>";
             dt += "<td>" + acdata.cart[i].acname + "</td>";
             dt += "<td>" + acdata.cart[i].acprice + "</td>";
@@ -34,8 +34,9 @@ function dispaly() {
         }
     }
     dt += "<tr>";
-    dt += "<td colspan='3'>TOTAL</td>";
-    dt += "<td colspan='4'>$ " + eqal() + "</td>";
+    dt += "<td colspan='2'>TOTAL</td>";
+    dt += "<td colspan=''>₹ " + eqal() + " (include discount)</td>";
+    dt += "<td colspan='3'>" + discount() + "  (total discount)</td>";
     dt += "</tr>";
     document.getElementById("cart").innerHTML = dt;
 }
@@ -84,10 +85,19 @@ function deldata(id) {
 function eqal() {
     let data = JSON.parse(localStorage.getItem("addtocart"));
 
-    let sum = data.cart.map((o) => o.acprice)
+    let sum = data.cart.map((o) => o.acprice);
+    let d = data.cart.map((o) => o.acdis).reduce((a) => { return (parseInt(a) ); });;
+    
     let t = sum.reduce((a, c) => { return (parseInt(a) + parseInt(c)); });
-
+    let dis = (t)*(d/100);
+    console.log(dis);
     return t;
+}
+
+function discount(){
+    let data = JSON.parse(localStorage.getItem("addtocart"));
+    let d = data.cart.map((o) => o.acdis).reduce((a) => { return (parseInt(a)); });
+    return d;
 }
 
 // end calculat total of product price in cart

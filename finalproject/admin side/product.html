@@ -17,7 +17,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
- 
+    <style>
+        table tr,td{
+          border:  2px solid rgb(237, 230, 230);
+          
+        }
+        form input,select{
+            background-color: aqua;
+        }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -64,7 +72,7 @@
           </div>
 
          <div  class="" >
-            <form action="#" name="pfrm" id="pfrm" enctype="multipart/form-data">
+            <form action="#" class="bg-warning fs-3 mb-3" name="pfrm" id="pfrm" enctype="multipart/form-data">
                 <input type="hidden" name="uid" id="uid" value="" >
                 <input type="hidden" name="pimgpath" id="pimgpath" value="" >
                 
@@ -79,14 +87,17 @@
             
                 <label>Prodect Price :</label>
                 <input type="text" id="ppr" name="ppr"><br><br>
+
+                <label>Prodect discount :</label>
+                <input type="text" id="pdi" name="pdi"><br><br>
             
                 <label>Prodect image :</label>
                 <input type="file" id="pimg" name="pimg"><br><br>
             
-                <input type="button" name="btn" id="btn" value="save">
+                <input type="button"  name="btn" id="btn" value="save product">
             </form>
             
-            <table id="pdata" class="w-100" border="1">
+            <table id="pdata" class="w-100 bg-black text-light fs-3" border="1">
                 
             </table>
             

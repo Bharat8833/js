@@ -36,7 +36,7 @@ function dispaly() {
     dt += "<tr>";
     dt += "<td colspan='2'>TOTAL</td>";
     dt += "<td colspan=''>₹ " + eqal() + " (include discount)</td>";
-    dt += "<td colspan='3'>" + discount() + "  (total discount)</td>";
+    dt += "<td colspan='3'>" + discount() + "%  (total discount)</td>";
     dt += "</tr>";
     document.getElementById("cart").innerHTML = dt;
 }

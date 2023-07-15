@@ -188,7 +188,7 @@ function check() {
         return false;
     }
 
-   
+   window.location.href = "../admin side/admin.html";
 
 }
 

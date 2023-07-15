@@ -322,7 +322,7 @@ function addToCart(pid) {
                     acname: prodData.name,
                     acimg: prodData.image,
                     acprice: prodData.price,
-                    acdis: prodData.discount,
+                    acdis:"20%",
                     qantity: 1,
                     catid: prodData.catname
                 }
@@ -347,11 +347,11 @@ function addToCart(pid) {
                 acname: prodData.name,
                 acimg: prodData.image,
                 acprice: prodData.price,
-                acdis: prodData.discount,
+                acdis: "20%",
                 qantity: 1,
                 catid: prodData.catname
             }
-            acdata = {};
+            let acdata = {};
             acdata.cart = [obj];
             localStorage.setItem("addtocart", JSON.stringify(acdata));
         }

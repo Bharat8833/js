@@ -29,14 +29,16 @@ function dispaly() {
             dt += "<td>" + acdata.cart[i].acdis + "</td>";
             dt += "<td>" + acdata.cart[i].qantity + "</td>";
 
-            dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.cart[i].id + ")' value='Delete'></td>";
+            dt += "<td> <input type='button' name='del' id='del' onclick='deldata(" + acdata.cart[i].id + ")' value='Remove'></td>";
             dt += "</tr>";
         }
     }
-    dt += "<tr>";
+    dt += "<tr class='tt'>";
     dt += "<td colspan='2'>TOTAL</td>";
     dt += "<td colspan=''>₹ " + eqal() + " (include discount)</td>";
-    dt += "<td colspan='3'>" + discount() + "%  (total discount)</td>";
+    dt += "<td colspan='2'>" + discount() + "%  (total discount)</td>";
+    dt += "<td colspan=''><input type='button' class='or'  onclick='order()'  value='Order Now'></td>";
+    dt+="<td><input type='button' class='print'  onclick='window.print()'   value='Print Detail'></td>";
     dt += "</tr>";
     document.getElementById("cart").innerHTML = dt;
 }
@@ -86,12 +88,14 @@ function eqal() {
     let data = JSON.parse(localStorage.getItem("addtocart"));
 
     let sum = data.cart.map((o) => o.acprice);
-    let d = data.cart.map((o) => o.acdis).reduce((a) => { return (parseInt(a) ); });;
-    
+    let d = data.cart.map((o) => o.acdis).reduce((a) => { return (parseInt(a) ); });
+     
     let t = sum.reduce((a, c) => { return (parseInt(a) + parseInt(c)); });
-    let dis = (t)*(d/100);
-    console.log(dis);
-    return t;
+    
+    let dis = (t)*(parseInt(d)/100);
+   
+    return (t-dis);
+ 
 }
 
 function discount(){
@@ -101,4 +105,18 @@ function discount(){
 }
 
 // end calculat total of product price in cart
+
+
+
+function order(){
+
+    let dt = '';
+      
+   
+    dt+='<h1 class="oc">Your Order Is Confirm</h1>'
+
+    document.getElementById("cart").innerHTML = dt;
+}
+
+
 

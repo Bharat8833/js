@@ -10,10 +10,83 @@
     #cart {
         font-size: 22px;
     }
+    body{
+        background-color: rgb(25, 25, 25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    .oc{
+        font-size: 60px;
+        color : green;
+        font-family: Arial, Helvetica, sans-serif;
+         
+    }
+
+    .h{
+        color: rgb(221, 215, 28);
+        font-family: Arial, Helvetica, sans-serif;
+         padding: 20px;
+         font-size: 50px;
+    }
+
+    .or{
+        background-color: rgb(140, 195, 30);
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    td img{
+        border-radius: 30px;
+        margin: 5px;
+    }
+
+    th{
+        color: rgb(255, 255, 255);
+    }
+
+    td input{
+        background-color: rgb(214, 28, 11);
+        padding: 6px;
+        border: 0;
+        outline: none;
+        border-radius: 20px;
+        font-size: 22px;
+    }
+
+    td,th{
+        padding: 10px;
+     
+    }
+
+    .tt {
+       background-color: rgb(61, 81, 81);
+       color: rgb(40, 219, 153);
+        
+    }
+
+    table{
+        background-image: linear-gradient(45deg,rgb(170, 216, 162),rgb(177, 135, 135),rgb(91, 153, 164));
+        color: rgb(10, 10, 10);
+        border-radius: 20px;
+        box-shadow: 0px 0px 100px rgb(176, 159, 159) ;
+        text-align: center;
+        padding: 10px;
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
 </style>
 
 <body>
-    <table id="cart" border="2" bgcolor="aqua" width="50%" align="center"></table>
+
+       <h1 class="h">YOUR CART</h1>
+    <table id="cart"   width="50%" ></table>
+
 </body>
 <script src="cart.js"></script>
 
